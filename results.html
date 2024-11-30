@@ -1,0 +1,46 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul class="results">
+        {% for pdf_file, page_num in results %}
+            <li>PDF: {{ pdf_file }} - Page: {{ page_num }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Search</a>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results</h1>
+
+        {% if results %}
+            <ul class="results">
+                {% for pdf_file, page_num in results %}
+                    <li><strong>PDF:</strong> {{ pdf_file }} <strong>Page:</strong> {{ page_num }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No matches found.</p>
+        {% endif %}
+
+        <a href="/" class="back-btn">Back to Search</a>
+    </div>
+</body>
+</html>
